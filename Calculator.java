@@ -4,17 +4,19 @@
 *This calculator simulator
 *
 * @author Hesssam Nejati
-* @version 2.0
+* @version 3.0
 * @since 2019-02-23
 */
-
 
 public class Calculator {
 
 	private int total;
-	
+	private  String totalString;
+
+	//constructor
 	public Calculator () {
 		total = 0;
+		totalString = "0";
 	}
 
 	//The getTotal method should return the current total
@@ -25,16 +27,19 @@ public class Calculator {
 	//The add method adds the parameter to the total variable
 	public void add (int value) {
 		total = total + value;
+		totalString = totalString + " + " + value;
 	}
 
 	//The subtract method subtracts the parameter from the total variable
 	public void subtract (int value) {
 		total = total - value;
+		totalString = totalString + " - " + value;
 	}
 
 	// The multiply method multiplies the total by the parameter
 	public void multiply (int value) {
 		total = total * value;
+		totalString = totalString + " * " + value;
 	}
 
 	//The divide method divides the total by the parameter. Use integer division.
@@ -45,9 +50,11 @@ public class Calculator {
 		} else{
 			total = total / value;
 		}
+		totalString = totalString + " / " + value;
 	}
 	
 	public String getHistory () {
-		return "";
+
+		return totalString;
 	}
 }
